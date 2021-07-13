@@ -285,7 +285,7 @@
                     <span id="text-74" contenteditable="true">梦梦，我爱你</span><br />
 					<br />
 					<br />
-					<span id="surprised"> -- 按“Esc"键有惊喜</span>
+					<span id="surprised"> -- 按“Z"键有惊喜</span>
 				</p>				
 			</div>
 		</div>
@@ -305,6 +305,25 @@
 </body>
 </html>
 <script>
+	function browserRedirect() {
+             var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+              var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+              var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+             var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+             var bIsAndroid = sUserAgent.match(/android/i) == "android";
+             var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            console.log("您的浏览设备为：");
+            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+               console.log("phone");
+           } else {
+                console.log("pc");
+          }
+        }
+
+         browserRedirect();
 	var a=1;
     var qaq=1;
 			document.addEventListener('keydown',function(e){
@@ -317,11 +336,11 @@
 				if(event.keyCode==77){
 					window.location.href="../love/final.html"
 				}
-				if(event.keyCode==27){
+				if(event.keyCode==90){
 					 qaq=0;
 				}
 				if(qaq==0){
-					document.getElementById('surprised').innerHTML='梦梦再试试m键。';
+					document.getElementById('surprised').innerHTML='梦梦再试试M键。';
 					console.log('hello');
 				}
             });
